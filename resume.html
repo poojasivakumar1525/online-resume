@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="resume" id="resume">
+
+    <h1 id="rname">Your Name</h1>
+
+    <p><strong>Email :</strong> <span id="remail"></span></p>
+    <p><strong>Phone :</strong> <span id="rphone"></span></p>
+     <p><strong>LinkedIn:</strong>
+        <a id="rlinkedin" href="#" target="_blank"></a>
+    </p>
+
+    <p><strong>GitHub:</strong>
+        <a id="rgithub" href="#" target="_blank"></a>
+    </p>
+
+    <hr>
+
+   
+
+    <h2>Career Objective</h2>
+    <p id="robjective"></p>
+
+    <h2>Education</h2>
+    <p id="reducation"></p>
+
+    <h2>Skills</h2>
+    <p id="rskills"></p>
+
+    <h2>Projects</h2>
+    <p id="rprojects"></p>
+     <h2>Certificates</h2>
+    <p id="rcertificates"></p>
+
+    <h2>Strengths</h2>
+    <ul id="rstrengths"></ul>
+
+    <h2>Languages Known</h2>
+    <ul id="rlanguages"></ul>
+
+    <h2>Hobbies</h2>
+    <ul id="rhobbies"></ul>
+
+</div>
+
+<div class="buttons">
+
+    <button onclick="window.print()">
+        🖨 Print Resume
+    </button>
+
+    <button onclick="downloadPDF()">
+        ⬇ Download PDF
+    </button>
+
+    <button onclick="goBack()">
+        ✏ Edit Resume
+    </button>
+
+</div>
+
+<script src="resume.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Online Resume Builder</h1>
+
+    <form id="resumeForm">
+
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label>Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter your phone number" required>
+
+        <label>LinkedIn Profile</label>
+<input type="url" id="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
+<label>GitHub Profile</label>
+<input type="url" id="github" placeholder="https://github.com/yourusername">
+
+
+        <label>Career Objective</label>
+        <textarea id="objective" rows="4" placeholder="Write your career objective"></textarea>
+
+        <label>Education</label>
+        <textarea id="education" rows="4" placeholder="Example: B.Sc Computer Science (AI & DS)"></textarea>
+
+        <label>Skills</label>
+        <textarea id="skills" rows="4" placeholder="Example: HTML, CSS, JavaScript, Python"></textarea>
+
+        <label>Projects</label>
+        <textarea id="projects" rows="4" placeholder="Example: Student Management System"></textarea>
+
+        <label>Certificates</label>
+<textarea id="certificates" rows="4"
+placeholder="Example:
+• Python Programming
+• Machine Learning Basics
+• Data Analysis with R"></textarea>
+
+<label>Strengths</label>
+<textarea id="strengths" rows="4"
+placeholder="Example:
+• Quick Learner
+• Problem Solving
+• Teamwork
+• Time Management"></textarea>
+
+<label>Languages Known</label>
+<textarea id="languages" rows="3"
+placeholder="Example:
+English
+Tamil"></textarea>
+
+<label>Hobbies</label>
+<textarea id="hobbies" rows="3"
+placeholder="Example:
+Dancing
+Coding
+Reading Books"></textarea>
+
+        <button type="button" onclick="generateResume()">
+            Generate Resume
+        </button>
+
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
