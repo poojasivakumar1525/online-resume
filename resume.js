@@ -1,59 +1,55 @@
-// Display data from Local Storage
-
+// Display Personal Details
 document.getElementById("rname").textContent =
-localStorage.getItem("name");
+    localStorage.getItem("name") || "";
 
 document.getElementById("remail").textContent =
-localStorage.getItem("email");
+    localStorage.getItem("email") || "";
 
 document.getElementById("rphone").textContent =
-localStorage.getItem("phone");
-
-document.getElementById("raddress").textContent =
-localStorage.getItem("address");
+    localStorage.getItem("phone") || "";
 
 // LinkedIn
-document.getElementById("rlinkedin").textContent =
-localStorage.getItem("linkedin");
-
-document.getElementById("rlinkedin").href =
-localStorage.getItem("linkedin");
+const linkedin = localStorage.getItem("linkedin") || "";
+document.getElementById("rlinkedin").textContent = linkedin;
+document.getElementById("rlinkedin").href = linkedin;
 
 // GitHub
-document.getElementById("rgithub").textContent =
-localStorage.getItem("github");
-
-document.getElementById("rgithub").href =
-localStorage.getItem("github");
+const github = localStorage.getItem("github") || "";
+document.getElementById("rgithub").textContent = github;
+document.getElementById("rgithub").href = github;
 
 // Resume Details
 document.getElementById("robjective").textContent =
-localStorage.getItem("objective");
+    localStorage.getItem("objective") || "";
 
 document.getElementById("reducation").textContent =
-localStorage.getItem("education");
+    localStorage.getItem("education") || "";
 
-document.getElementById("rskills").textContent =
-localStorage.getItem("skills");
+// Function to display list items
+function displayList(id, data) {
+    const list = document.getElementById(id);
+    list.innerHTML = "";
 
-document.getElementById("rprojects").textContent =
-localStorage.getItem("projects");
+    if (data) {
+        data.split("\n").forEach(item => {
+            if (item.trim() !== "") {
+                const li = document.createElement("li");
+                li.textContent = item.replace(/^•\s*/, "");
+                list.appendChild(li);
+            }
+        });
+    }
+}
 
-document.getElementById("rcertificates").textContent =
-localStorage.getItem("certificates");
-
-document.getElementById("rstrengths").textContent =
-localStorage.getItem("strengths");
-
-document.getElementById("rlanguages").textContent =
-localStorage.getItem("languages");
-
-document.getElementById("rhobbies").textContent =
-localStorage.getItem("hobbies");
-
+// Display Lists
+displayList("rskills", localStorage.getItem("skills"));
+displayList("rprojects", localStorage.getItem("projects"));
+displayList("rcertificates", localStorage.getItem("certificates"));
+displayList("rstrengths", localStorage.getItem("strengths"));
+displayList("rlanguages", localStorage.getItem("languages"));
+displayList("rhobbies", localStorage.getItem("hobbies"));
 
 // Download Resume as PDF
-
 function downloadPDF() {
 
     const element = document.getElementById("resume");
@@ -73,9 +69,7 @@ function downloadPDF() {
     html2pdf().set(options).from(element).save();
 }
 
-
 // Go back to edit
-
 function goBack() {
     window.location.href = "index.html";
 }
